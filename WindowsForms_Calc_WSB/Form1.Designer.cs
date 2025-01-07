@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputBox = new System.Windows.Forms.TextBox();
             this.resultLabel = new System.Windows.Forms.Label();
-            this.CalculateButton = new System.Windows.Forms.Button();
+            this.calculateButton = new System.Windows.Forms.Button();
             this.staticSpine = new System.Windows.Forms.RadioButton();
             this.poundage = new System.Windows.Forms.RadioButton();
             this.arrowWeight = new System.Windows.Forms.RadioButton();
             this.arrowSpeed = new System.Windows.Forms.RadioButton();
             this.resultPrecision = new System.Windows.Forms.ComboBox();
-            this.DarkMode = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DarkModeCheckbox = new System.Windows.Forms.CheckBox();
+            this.calculationGroup = new System.Windows.Forms.GroupBox();
             this.unitInput = new System.Windows.Forms.Label();
             this.unitResult = new System.Windows.Forms.Label();
             this.description = new System.Windows.Forms.GroupBox();
             this.descriptionContent = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.exchangeUnits = new System.Windows.Forms.Button();
+            this.calculationGroup.SuspendLayout();
             this.description.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // inputBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
+            this.inputBox.Location = new System.Drawing.Point(85, 61);
+            this.inputBox.Name = "inputBox";
+            this.inputBox.Size = new System.Drawing.Size(100, 22);
+            this.inputBox.TabIndex = 0;
             // 
             // resultLabel
             // 
@@ -64,15 +65,15 @@
             this.resultLabel.TabIndex = 2;
             this.resultLabel.Text = "result will be here";
             // 
-            // CalculateButton
+            // calculateButton
             // 
-            this.CalculateButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.CalculateButton.Location = new System.Drawing.Point(213, 60);
-            this.CalculateButton.Name = "CalculateButton";
-            this.CalculateButton.Size = new System.Drawing.Size(75, 23);
-            this.CalculateButton.TabIndex = 3;
-            this.CalculateButton.Text = "Przelicz";
-            this.CalculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.calculateButton.Location = new System.Drawing.Point(213, 60);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(75, 23);
+            this.calculateButton.TabIndex = 3;
+            this.calculateButton.Text = "Przelicz";
+            this.calculateButton.UseVisualStyleBackColor = true;
             // 
             // staticSpine
             // 
@@ -128,34 +129,34 @@
             "2"});
             this.resultPrecision.Location = new System.Drawing.Point(456, 132);
             this.resultPrecision.Name = "resultPrecision";
-            this.resultPrecision.Size = new System.Drawing.Size(121, 24);
+            this.resultPrecision.Size = new System.Drawing.Size(134, 24);
             this.resultPrecision.TabIndex = 8;
             this.resultPrecision.Text = "precyzja wyniku";
             this.resultPrecision.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // DarkMode
+            // DarkModeCheckbox
             // 
-            this.DarkMode.AutoSize = true;
-            this.DarkMode.Location = new System.Drawing.Point(560, 22);
-            this.DarkMode.Name = "DarkMode";
-            this.DarkMode.Size = new System.Drawing.Size(105, 20);
-            this.DarkMode.TabIndex = 9;
-            this.DarkMode.Text = "Tryb Ciemny";
-            this.DarkMode.UseVisualStyleBackColor = true;
-            this.DarkMode.CheckedChanged += new System.EventHandler(this.DarkMode_CheckedChanged);
+            this.DarkModeCheckbox.AutoSize = true;
+            this.DarkModeCheckbox.Location = new System.Drawing.Point(560, 22);
+            this.DarkModeCheckbox.Name = "DarkModeCheckbox";
+            this.DarkModeCheckbox.Size = new System.Drawing.Size(105, 20);
+            this.DarkModeCheckbox.TabIndex = 9;
+            this.DarkModeCheckbox.Text = "Tryb Ciemny";
+            this.DarkModeCheckbox.UseVisualStyleBackColor = true;
+            this.DarkModeCheckbox.CheckedChanged += new System.EventHandler(this.DarkModeCheckbox_CheckedChanged);
             // 
-            // groupBox1
+            // calculationGroup
             // 
-            this.groupBox1.Controls.Add(this.staticSpine);
-            this.groupBox1.Controls.Add(this.poundage);
-            this.groupBox1.Controls.Add(this.arrowWeight);
-            this.groupBox1.Controls.Add(this.arrowSpeed);
-            this.groupBox1.Location = new System.Drawing.Point(456, 210);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 179);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.calculationGroup.Controls.Add(this.staticSpine);
+            this.calculationGroup.Controls.Add(this.poundage);
+            this.calculationGroup.Controls.Add(this.arrowWeight);
+            this.calculationGroup.Controls.Add(this.arrowSpeed);
+            this.calculationGroup.Location = new System.Drawing.Point(456, 210);
+            this.calculationGroup.Name = "calculationGroup";
+            this.calculationGroup.Size = new System.Drawing.Size(200, 179);
+            this.calculationGroup.TabIndex = 10;
+            this.calculationGroup.TabStop = false;
+            this.calculationGroup.Text = "groupBox1";
             // 
             // unitInput
             // 
@@ -197,24 +198,36 @@
             this.descriptionContent.TabIndex = 13;
             this.descriptionContent.Text = " jednostka2";
             // 
+            // exchangeUnits
+            // 
+            this.exchangeUnits.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.exchangeUnits.Location = new System.Drawing.Point(213, 17);
+            this.exchangeUnits.Name = "exchangeUnits";
+            this.exchangeUnits.Size = new System.Drawing.Size(75, 23);
+            this.exchangeUnits.TabIndex = 14;
+            this.exchangeUnits.Text = "zmień jednostki";
+            this.exchangeUnits.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 453);
+            this.Controls.Add(this.exchangeUnits);
             this.Controls.Add(this.description);
             this.Controls.Add(this.unitResult);
             this.Controls.Add(this.unitInput);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DarkMode);
+            this.Controls.Add(this.calculationGroup);
+            this.Controls.Add(this.DarkModeCheckbox);
             this.Controls.Add(this.resultPrecision);
-            this.Controls.Add(this.CalculateButton);
+            this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.resultLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.inputBox);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.calculationGroup.ResumeLayout(false);
+            this.calculationGroup.PerformLayout();
             this.description.ResumeLayout(false);
             this.description.PerformLayout();
             this.ResumeLayout(false);
@@ -224,20 +237,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Label resultLabel;
-        private System.Windows.Forms.Button CalculateButton;
+        private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.RadioButton staticSpine;
         private System.Windows.Forms.RadioButton poundage;
         private System.Windows.Forms.RadioButton arrowWeight;
         private System.Windows.Forms.RadioButton arrowSpeed;
         private System.Windows.Forms.ComboBox resultPrecision;
-        private System.Windows.Forms.CheckBox DarkMode;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox DarkModeCheckbox;
+        private System.Windows.Forms.GroupBox calculationGroup;
         private System.Windows.Forms.Label unitInput;
         private System.Windows.Forms.Label unitResult;
         private System.Windows.Forms.GroupBox description;
         private System.Windows.Forms.Label descriptionContent;
+        private System.Windows.Forms.Button exchangeUnits;
     }
 }
 
