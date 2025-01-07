@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.result = new System.Windows.Forms.Label();
-            this.button = new System.Windows.Forms.Button();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.CalculateButton = new System.Windows.Forms.Button();
             this.staticSpine = new System.Windows.Forms.RadioButton();
             this.poundage = new System.Windows.Forms.RadioButton();
             this.arrowWeight = new System.Windows.Forms.RadioButton();
             this.arrowSpeed = new System.Windows.Forms.RadioButton();
             this.resultPrecision = new System.Windows.Forms.ComboBox();
-            this.LightDarkMode = new System.Windows.Forms.CheckBox();
+            this.DarkMode = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.unitInput = new System.Windows.Forms.Label();
             this.unitResult = new System.Windows.Forms.Label();
@@ -53,24 +53,26 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 0;
             // 
-            // result
+            // resultLabel
             // 
-            this.result.AutoSize = true;
-            this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.result.Location = new System.Drawing.Point(303, 60);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(180, 25);
-            this.result.TabIndex = 2;
-            this.result.Text = "result will be here";
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.resultLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.resultLabel.Location = new System.Drawing.Point(303, 60);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(180, 25);
+            this.resultLabel.TabIndex = 2;
+            this.resultLabel.Text = "result will be here";
             // 
-            // button
+            // CalculateButton
             // 
-            this.button.Location = new System.Drawing.Point(213, 60);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(75, 23);
-            this.button.TabIndex = 3;
-            this.button.Text = "Przelicz";
-            this.button.UseVisualStyleBackColor = true;
+            this.CalculateButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CalculateButton.Location = new System.Drawing.Point(213, 60);
+            this.CalculateButton.Name = "CalculateButton";
+            this.CalculateButton.Size = new System.Drawing.Size(75, 23);
+            this.CalculateButton.TabIndex = 3;
+            this.CalculateButton.Text = "Przelicz";
+            this.CalculateButton.UseVisualStyleBackColor = true;
             // 
             // staticSpine
             // 
@@ -82,6 +84,7 @@
             this.staticSpine.TabStop = true;
             this.staticSpine.Text = "spin statyczny";
             this.staticSpine.UseVisualStyleBackColor = true;
+            this.staticSpine.CheckedChanged += new System.EventHandler(this.staticSpine_CheckedChanged);
             // 
             // poundage
             // 
@@ -119,6 +122,10 @@
             // resultPrecision
             // 
             this.resultPrecision.FormattingEnabled = true;
+            this.resultPrecision.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
             this.resultPrecision.Location = new System.Drawing.Point(456, 132);
             this.resultPrecision.Name = "resultPrecision";
             this.resultPrecision.Size = new System.Drawing.Size(121, 24);
@@ -126,15 +133,16 @@
             this.resultPrecision.Text = "precyzja wyniku";
             this.resultPrecision.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // LightDarkMode
+            // DarkMode
             // 
-            this.LightDarkMode.AutoSize = true;
-            this.LightDarkMode.Location = new System.Drawing.Point(560, 22);
-            this.LightDarkMode.Name = "LightDarkMode";
-            this.LightDarkMode.Size = new System.Drawing.Size(96, 20);
-            this.LightDarkMode.TabIndex = 9;
-            this.LightDarkMode.Text = "Dark Mode";
-            this.LightDarkMode.UseVisualStyleBackColor = true;
+            this.DarkMode.AutoSize = true;
+            this.DarkMode.Location = new System.Drawing.Point(560, 22);
+            this.DarkMode.Name = "DarkMode";
+            this.DarkMode.Size = new System.Drawing.Size(105, 20);
+            this.DarkMode.TabIndex = 9;
+            this.DarkMode.Text = "Tryb Ciemny";
+            this.DarkMode.UseVisualStyleBackColor = true;
+            this.DarkMode.CheckedChanged += new System.EventHandler(this.DarkMode_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -193,15 +201,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(717, 453);
             this.Controls.Add(this.description);
             this.Controls.Add(this.unitResult);
             this.Controls.Add(this.unitInput);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.LightDarkMode);
+            this.Controls.Add(this.DarkMode);
             this.Controls.Add(this.resultPrecision);
-            this.Controls.Add(this.button);
-            this.Controls.Add(this.result);
+            this.Controls.Add(this.CalculateButton);
+            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -217,14 +225,14 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label result;
-        private System.Windows.Forms.Button button;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Button CalculateButton;
         private System.Windows.Forms.RadioButton staticSpine;
         private System.Windows.Forms.RadioButton poundage;
         private System.Windows.Forms.RadioButton arrowWeight;
         private System.Windows.Forms.RadioButton arrowSpeed;
         private System.Windows.Forms.ComboBox resultPrecision;
-        private System.Windows.Forms.CheckBox LightDarkMode;
+        private System.Windows.Forms.CheckBox DarkMode;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label unitInput;
         private System.Windows.Forms.Label unitResult;

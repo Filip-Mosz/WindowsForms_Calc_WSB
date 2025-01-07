@@ -19,6 +19,23 @@ namespace WindowsForms_Calc_WSB
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void DarkMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DarkMode.Checked)
+            {
+                resultLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            }
+            else
+            {
+                resultLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            }
+        }
+
+        private void staticSpine_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
