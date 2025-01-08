@@ -68,9 +68,9 @@
             // calculateButton
             // 
             this.calculateButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.calculateButton.Location = new System.Drawing.Point(213, 60);
+            this.calculateButton.Location = new System.Drawing.Point(215, 60);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(75, 23);
+            this.calculateButton.Size = new System.Drawing.Size(75, 27);
             this.calculateButton.TabIndex = 3;
             this.calculateButton.Text = "Przelicz";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -201,11 +201,11 @@
             // exchangeUnits
             // 
             this.exchangeUnits.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.exchangeUnits.Location = new System.Drawing.Point(213, 17);
+            this.exchangeUnits.Location = new System.Drawing.Point(240, 16);
             this.exchangeUnits.Name = "exchangeUnits";
-            this.exchangeUnits.Size = new System.Drawing.Size(75, 23);
+            this.exchangeUnits.Size = new System.Drawing.Size(25, 25);
             this.exchangeUnits.TabIndex = 14;
-            this.exchangeUnits.Text = "zmień jednostki";
+            this.exchangeUnits.Text = "↔";
             this.exchangeUnits.UseVisualStyleBackColor = true;
             // 
             // Form1
