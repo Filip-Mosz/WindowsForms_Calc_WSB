@@ -14,6 +14,11 @@ namespace WindowsForms_Calc_WSB
 {
     public partial class Form1 : Form
     {
+        bool unitsExchanged = false;
+        int outputPrecision = 0;
+        ConverterImperial cImperial = new ConverterImperial();
+        ConverterMetric cMetric = new ConverterMetric();
+
         public Form1()
         {
             InitializeComponent();
@@ -113,9 +118,111 @@ namespace WindowsForms_Calc_WSB
             ExchangeUnitsTooltip.SetToolTip(exchangeUnits, "Zamień jednostki miejscami");
         }
 
-        private void staticSpine_CheckedChanged(object sender, EventArgs e)
+        private void Checkbox_CheckedChanged(object sender, EventArgs e)
         {
+            if (staticSpine.Checked)
+            {
+                unitInput.Text = "TradSpine";
+                unitResult.Text = "InchSpine";
+                if (unitsExchanged)
+                {
+                    unitInput.Text = "InchSpine";
+                    unitResult.Text = "TradSpine";
+                }
+            }
 
+            if (poundage.Checked)
+            {
+                unitInput.Text = "Kg";
+                unitResult.Text = "Lbs";
+                if (unitsExchanged)
+                {
+                    unitInput.Text = "Lbs";
+                    unitResult.Text = "Kg";
+                }
+            }
+
+            if (arrowWeight.Checked)
+            {
+                unitInput.Text = "gram";
+                unitResult.Text = "grain";
+                if (unitsExchanged)
+                {
+                    unitInput.Text = "grain";
+                    unitResult.Text = "gram";
+                }
+            }
+
+            if (arrowSpeed.Checked)
+            {
+                unitInput.Text = "m/s";
+                unitResult.Text = "fps";
+                if (unitsExchanged)
+                {
+                    unitInput.Text = "fps";
+                    unitResult.Text = "m/s";
+                }
+            }
+        }
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+            double inputValue = Convert.ToDouble(inputBox.Text);
+
+            if(staticSpine.Checked) {
+                //oblicznie spinu statycznego
+                //sprawdzenie, czy exchange utits odkliknięty
+                if (unitsExchanged)
+                {
+                    //use of 'imperial' version of convert
+                }
+                else
+                {
+                    //use 'SI' version of convert
+                }
+            }
+
+            if (poundage.Checked)
+            {
+                //oblicznie spinu statycznego
+                //sprawdzenie, czy exchange utits odkliknięty
+                if (unitsExchanged)
+                {
+                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                }
+                else
+                {
+                    resultLabel.Text = cMetric.poundage(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                }
+            }
+
+            if (arrowWeight.Checked)
+            {
+                //oblicznie spinu statycznego
+                //sprawdzenie, czy exchange utits odkliknięty
+                if (unitsExchanged)
+                {
+                    //use of 'imperial' version of convert
+                }
+                else
+                {
+                    //use 'SI' version of convert
+                }
+            }
+
+            if (arrowSpeed.Checked)
+            {
+                //oblicznie spinu statycznego
+                //sprawdzenie, czy exchange utits odkliknięty
+                if (unitsExchanged)
+                {
+                    //use of 'imperial' version of convert
+                }
+                else
+                {
+                    //use 'SI' version of convert
+                }
+            }
         }
     }
 }

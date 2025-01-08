@@ -75,6 +75,7 @@
             this.calculateButton.TabIndex = 3;
             this.calculateButton.Text = "Przelicz";
             this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // staticSpine
             // 
@@ -86,7 +87,7 @@
             this.staticSpine.TabStop = true;
             this.staticSpine.Text = "spin statyczny";
             this.staticSpine.UseVisualStyleBackColor = true;
-            this.staticSpine.CheckedChanged += new System.EventHandler(this.staticSpine_CheckedChanged);
+            this.staticSpine.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // poundage
             // 
@@ -98,6 +99,7 @@
             this.poundage.TabStop = true;
             this.poundage.Text = "siła łuku";
             this.poundage.UseVisualStyleBackColor = true;
+            this.poundage.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // arrowWeight
             // 
@@ -109,6 +111,7 @@
             this.arrowWeight.TabStop = true;
             this.arrowWeight.Text = "waga strzały";
             this.arrowWeight.UseVisualStyleBackColor = true;
+            this.arrowWeight.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // arrowSpeed
             // 
@@ -120,6 +123,7 @@
             this.arrowSpeed.TabStop = true;
             this.arrowSpeed.Text = "prędkość strzały";
             this.arrowSpeed.UseVisualStyleBackColor = true;
+            this.arrowSpeed.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // resultPrecision
             // 
