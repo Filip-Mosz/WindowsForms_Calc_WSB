@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="descriptionContent.Text" xml:space="preserve">
+    <value>Witam serdecznie w kalkulatorze pomocnym każdemu łucznikowi. Pomaga on w konwersji jednostek używanych w tym sporcie. Nie musisz wiedzieć, co oznaczają i czemu służą; po zaznaczeniu checkboxa jego opis pojawi się tutaj.</value>
+  </data>
 </root>

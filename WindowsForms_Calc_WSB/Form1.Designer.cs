@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.inputBox = new System.Windows.Forms.TextBox();
             this.resultLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
@@ -191,12 +192,13 @@
             // descriptionContent
             // 
             this.descriptionContent.AutoSize = true;
-            this.descriptionContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.descriptionContent.Location = new System.Drawing.Point(7, 31);
+            this.descriptionContent.MaximumSize = new System.Drawing.Size(325, 0);
             this.descriptionContent.Name = "descriptionContent";
-            this.descriptionContent.Size = new System.Drawing.Size(94, 20);
+            this.descriptionContent.Size = new System.Drawing.Size(321, 120);
             this.descriptionContent.TabIndex = 13;
-            this.descriptionContent.Text = " jednostka2";
+            this.descriptionContent.Text = resources.GetString("descriptionContent.Text");
             // 
             // exchangeUnits
             // 
@@ -207,6 +209,7 @@
             this.exchangeUnits.TabIndex = 14;
             this.exchangeUnits.Text = "↔";
             this.exchangeUnits.UseVisualStyleBackColor = true;
+            this.exchangeUnits.MouseHover += new System.EventHandler(this.ExchangeUnits_OnHover);
             // 
             // Form1
             // 

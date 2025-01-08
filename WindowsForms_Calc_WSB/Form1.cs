@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,7 +59,7 @@ namespace WindowsForms_Calc_WSB
             switch (element.GetType().ToString())
             {
                 case "System.Windows.Forms.Label":
-                    (element as Label).ForeColor = SystemColors.ActiveCaptionText;
+                    (element as System.Windows.Forms.Label).ForeColor = SystemColors.ActiveCaptionText; //full path against ambigious call
                     break;
                 case "System.Windows.Forms.Button":
                     (element as Button).ForeColor = SystemColors.ActiveCaptionText;
@@ -86,7 +87,7 @@ namespace WindowsForms_Calc_WSB
             switch (element.GetType().ToString())
             {
                 case "System.Windows.Forms.Label":
-                    (element as Label).ForeColor = SystemColors.ControlLightLight;
+                    (element as System.Windows.Forms.Label).ForeColor = SystemColors.ControlLightLight; //full path against ambigious call
                     break;
                 case "System.Windows.Forms.Button":
                     (element as Button).ForeColor = SystemColors.ControlLightLight;
@@ -104,6 +105,12 @@ namespace WindowsForms_Calc_WSB
                     (element as TextBox).BackColor = SystemColors.ControlDarkDark;
                     break;
             }
+        }
+
+        private void ExchangeUnits_OnHover(object sender, System.EventArgs e)
+        {
+            ToolTip ExchangeUnitsTooltip = new ToolTip();
+            ExchangeUnitsTooltip.SetToolTip(exchangeUnits, "Zamień jednostki miejscami");
         }
 
         private void staticSpine_CheckedChanged(object sender, EventArgs e)
