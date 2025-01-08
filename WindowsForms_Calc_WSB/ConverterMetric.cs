@@ -20,22 +20,22 @@ namespace WindowsForms_Calc_WSB
 
         public ConverterMetric() { }
 
-        double poundage(double pounds, int round)
+        internal double poundage(double pounds, int round)
         {
             return Math.Round(pounds / pound, round);
         }
 
-        double weight(double grains, int round)
+        internal double weight(double grains, int round)
         {
             return Math.Round(grains / grain, round);
         }
 
-        double speed(double feet, int round)
+        internal double speed(double feet, int round)
         {
             return Math.Round(feet / foot, round);
         }
 
-        double staticSpine(double tradSpine, int round) //may require improvement
+        internal double staticSpine(double tradSpine, int round) //may require improvement
         {
             return tradSpine / spine;
         }
