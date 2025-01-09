@@ -118,6 +118,12 @@ namespace WindowsForms_Calc_WSB
             ExchangeUnitsTooltip.SetToolTip(exchangeUnits, "Zamień jednostki miejscami");
         }
 
+        private void OutputPrecisionBox_OnHover(object sender, EventArgs e)
+        {
+            ToolTip ExchangeUnitsTooltip = new ToolTip();
+            ExchangeUnitsTooltip.SetToolTip(groupBox1, "Ilość miejsc po przecinku");
+        }
+
         private void Checkbox_CheckedChanged(object sender, EventArgs e)
         {
             if (staticSpine.Checked)
@@ -182,7 +188,7 @@ namespace WindowsForms_Calc_WSB
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd: " + ex.Message, MessageBoxButtons.OK.ToString());
+                MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK);
             }
             
 
@@ -240,7 +246,7 @@ namespace WindowsForms_Calc_WSB
             }
             else
             {
-                MessageBox.Show("Info: Najpierw zaznacz żądaną operację");
+                MessageBox.Show("Info: Najpierw zaznacz żądaną operację", "Info");
             }
         }
 
@@ -255,6 +261,8 @@ namespace WindowsForms_Calc_WSB
                 unitsExchanged = true;
             }
             Checkbox_CheckedChanged(sender, e);
+            inputBox.Text = resultLabel.Text;
+            resultLabel.Text = "0";
         }
     }
 }

@@ -44,8 +44,10 @@
             this.description = new System.Windows.Forms.GroupBox();
             this.descriptionContent = new System.Windows.Forms.Label();
             this.exchangeUnits = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.calculationGroup.SuspendLayout();
             this.description.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputBox
@@ -54,6 +56,7 @@
             this.inputBox.Name = "inputBox";
             this.inputBox.Size = new System.Drawing.Size(100, 22);
             this.inputBox.TabIndex = 0;
+            this.inputBox.Text = "0";
             // 
             // resultLabel
             // 
@@ -62,9 +65,9 @@
             this.resultLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.resultLabel.Location = new System.Drawing.Point(303, 60);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(180, 25);
+            this.resultLabel.Size = new System.Drawing.Size(24, 25);
             this.resultLabel.TabIndex = 2;
-            this.resultLabel.Text = "result will be here";
+            this.resultLabel.Text = "0";
             // 
             // calculateButton
             // 
@@ -132,11 +135,11 @@
             "0",
             "1",
             "2"});
-            this.resultPrecision.Location = new System.Drawing.Point(456, 132);
+            this.resultPrecision.Location = new System.Drawing.Point(8, 21);
             this.resultPrecision.Name = "resultPrecision";
             this.resultPrecision.Size = new System.Drawing.Size(134, 24);
             this.resultPrecision.TabIndex = 8;
-            this.resultPrecision.Text = "precyzja wyniku";
+            this.resultPrecision.Text = "0";
             this.resultPrecision.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // DarkModeCheckbox
@@ -216,18 +219,29 @@
             this.exchangeUnits.Click += new System.EventHandler(this.ExchangeUnitsButton_Click);
             this.exchangeUnits.MouseHover += new System.EventHandler(this.ExchangeUnits_OnHover);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.resultPrecision);
+            this.groupBox1.Location = new System.Drawing.Point(456, 61);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(151, 55);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "precyzja wyniku";
+            this.groupBox1.MouseHover += new System.EventHandler(this.OutputPrecisionBox_OnHover);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 453);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.exchangeUnits);
             this.Controls.Add(this.description);
             this.Controls.Add(this.unitResult);
             this.Controls.Add(this.unitInput);
             this.Controls.Add(this.calculationGroup);
             this.Controls.Add(this.DarkModeCheckbox);
-            this.Controls.Add(this.resultPrecision);
             this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.inputBox);
@@ -238,6 +252,7 @@
             this.calculationGroup.PerformLayout();
             this.description.ResumeLayout(false);
             this.description.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,6 +275,7 @@
         private System.Windows.Forms.GroupBox description;
         private System.Windows.Forms.Label descriptionContent;
         private System.Windows.Forms.Button exchangeUnits;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
