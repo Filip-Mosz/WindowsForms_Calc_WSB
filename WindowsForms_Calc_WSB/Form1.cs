@@ -129,12 +129,12 @@ namespace WindowsForms_Calc_WSB
             if (staticSpine.Checked)
             {
                 descriptionContent.Text = "Spin statyczny oznacza sztywność promienia strzały. Używany jest do określenia, czy strzała ma szanse na \"czyste\" wyjście z łuku bez zaburzenia toru lotu. Wyrażany w funtach lub setnych częściach cala";
-                unitInput.Text = "InchSpine";
-                unitResult.Text = "LbsSpine"; 
+                unitInput.Text = "Cal";
+                unitResult.Text = "funt"; 
                 if (unitsExchanged)
                 {
-                    unitInput.Text = "LbsSpine";
-                    unitResult.Text = "InchSpine";
+                    unitInput.Text = "Funt";
+                    unitResult.Text = "Cal";
                 }
             }
 

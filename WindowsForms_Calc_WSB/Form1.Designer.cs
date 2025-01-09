@@ -172,9 +172,8 @@
             this.unitInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.unitInput.Location = new System.Drawing.Point(80, 20);
             this.unitInput.Name = "unitInput";
-            this.unitInput.Size = new System.Drawing.Size(94, 20);
+            this.unitInput.Size = new System.Drawing.Size(0, 20);
             this.unitInput.TabIndex = 11;
-            this.unitInput.Text = "jednostka 1";
             // 
             // unitResult
             // 
@@ -182,9 +181,8 @@
             this.unitResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.unitResult.Location = new System.Drawing.Point(306, 20);
             this.unitResult.Name = "unitResult";
-            this.unitResult.Size = new System.Drawing.Size(94, 20);
+            this.unitResult.Size = new System.Drawing.Size(0, 20);
             this.unitResult.TabIndex = 12;
-            this.unitResult.Text = " jednostka2";
             // 
             // description
             // 
