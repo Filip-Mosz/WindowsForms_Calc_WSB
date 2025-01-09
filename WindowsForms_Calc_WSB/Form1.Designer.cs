@@ -161,7 +161,7 @@
             this.calculationGroup.Size = new System.Drawing.Size(200, 179);
             this.calculationGroup.TabIndex = 10;
             this.calculationGroup.TabStop = false;
-            this.calculationGroup.Text = "groupBox1";
+            this.calculationGroup.Text = "operacje";
             // 
             // unitInput
             // 
