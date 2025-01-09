@@ -244,13 +244,20 @@ namespace WindowsForms_Calc_WSB
             }
             else
             {
-                MessageBox.Show("Info: Najpierw zaznacz rządaną operację");
+                MessageBox.Show("Info: Najpierw zaznacz żądaną operację");
             }
         }
 
         private void ExchangeUnitsButton_Click(object sender, EventArgs e)
         {
-            unitsExchanged = true;
+            if (unitsExchanged) 
+            { 
+                unitsExchanged = false;
+            }
+            else if(!unitsExchanged)
+            {
+                unitsExchanged = true;
+            }
             Checkbox_CheckedChanged(sender, e);
         }
     }
