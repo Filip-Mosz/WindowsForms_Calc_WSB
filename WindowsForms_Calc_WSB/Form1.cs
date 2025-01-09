@@ -26,7 +26,9 @@ namespace WindowsForms_Calc_WSB
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            outputPrecision = Convert.ToInt16(resultPrecision.SelectedItem);
+            Console.WriteLine("outputPrecision set to {0}", outputPrecision);
+            calculateButton_Click(sender, e);
         }
 
         private void DarkModeCheckbox_CheckedChanged(object sender, EventArgs e)
