@@ -175,6 +175,10 @@ namespace WindowsForms_Calc_WSB
             try
             {
                 inputValue = Convert.ToDouble(inputBox.Text);
+                if (inputValue < 0)
+                {
+                    throw new Exception("wartość nie może być ujemna");
+                }
             }
             catch (Exception ex)
             {
@@ -194,8 +198,7 @@ namespace WindowsForms_Calc_WSB
                     resultLabel.Text = cMetric.staticSpine(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                 }
             }
-
-            if (poundage.Checked)
+            else if (poundage.Checked)
             {
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
@@ -207,8 +210,7 @@ namespace WindowsForms_Calc_WSB
                     resultLabel.Text = cMetric.poundage(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                 }
             }
-
-            if (arrowWeight.Checked)
+            else if (arrowWeight.Checked)
             {
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
@@ -220,8 +222,7 @@ namespace WindowsForms_Calc_WSB
                     resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                 }
             }
-
-            if (arrowSpeed.Checked)
+            else if (arrowSpeed.Checked)
             {
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
@@ -232,6 +233,10 @@ namespace WindowsForms_Calc_WSB
                 {
                     resultLabel.Text = cMetric.speed(inputValue, outputPrecision).ToString(); //use 'SI' version of convert
                 }
+            }
+            else
+            {
+                MessageBox.Show("Info: Najpierw zaznacz rządaną operację");
             }
         }
     }
