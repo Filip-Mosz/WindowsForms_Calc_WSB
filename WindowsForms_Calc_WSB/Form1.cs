@@ -171,28 +171,36 @@ namespace WindowsForms_Calc_WSB
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            double inputValue = Convert.ToDouble(inputBox.Text);
+            double inputValue = 0;
+            try
+            {
+                inputValue = Convert.ToDouble(inputBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message, MessageBoxButtons.OK.ToString());
+            }
+            
 
-            if(staticSpine.Checked) {
-                //oblicznie spinu statycznego
+            if(staticSpine.Checked) 
+            {
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    //use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.staticSpine(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
                 }
                 else
                 {
-                    //use 'SI' version of convert
+                    resultLabel.Text = cMetric.staticSpine(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                 }
             }
 
             if (poundage.Checked)
             {
-                //oblicznie spinu statycznego
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.poundage(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
                 }
                 else
                 {
@@ -202,29 +210,27 @@ namespace WindowsForms_Calc_WSB
 
             if (arrowWeight.Checked)
             {
-                //oblicznie spinu statycznego
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    //use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
                 }
                 else
                 {
-                    //use 'SI' version of convert
+                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                 }
             }
 
             if (arrowSpeed.Checked)
             {
-                //oblicznie spinu statycznego
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    //use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.speed(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
                 }
                 else
                 {
-                    //use 'SI' version of convert
+                    resultLabel.Text = cMetric.speed(inputValue, outputPrecision).ToString(); //use 'SI' version of convert
                 }
             }
         }

@@ -13,7 +13,7 @@ namespace WindowsForms_Calc_WSB
          Object contining methods returning values in SI units
          */
 
-        double foot = 30.48;
+        double foot = 0.3048;
         double pound = 0.45359237;
         double grain = 0.06479891;
         double spine = 1; //find correct ratio

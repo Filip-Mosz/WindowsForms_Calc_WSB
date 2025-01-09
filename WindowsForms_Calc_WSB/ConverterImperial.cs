@@ -13,7 +13,7 @@ namespace WindowsForms_Calc_WSB
         Object contining methods returning values in imperial units
         */
 
-        private double foot = 30.48;
+        private double foot = 0.3048;
         private double pound = 0.45359237;
         private double grain = 0.06479891;
         private double spine = 1; //find correct ratio
