@@ -52,7 +52,6 @@ namespace WindowsForms_Calc_WSB
                 {
                     DarkModeInactive(element);
                 }
-                //DarkModeInactive(resultLabel);
                 this.ForeColor = SystemColors.ActiveCaptionText;
                 this.BackColor = SystemColors.Control;
             }
@@ -60,7 +59,6 @@ namespace WindowsForms_Calc_WSB
 
         private void DarkModeInactive(object element)
         {
-            Console.WriteLine(element.GetType());
             string type = element.GetType().ToString();
 
             switch (element.GetType().ToString())
@@ -190,57 +188,53 @@ namespace WindowsForms_Calc_WSB
 
             if(staticSpine.Checked) 
             {
-                //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.staticSpine(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.staticSpine(inputValue, outputPrecision).ToString();
                     Console.WriteLine("poundsSpine -> inchSpine");
                 }
                 else
                 {
-                    resultLabel.Text = cMetric.staticSpine(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    resultLabel.Text = cMetric.staticSpine(inputValue, outputPrecision).ToString();
                     Console.WriteLine("inchSpine -> poundsSpine");
                 }
             }
             else if (poundage.Checked)
             {
-                //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
                     Console.WriteLine("lbs -> kg");
-                    resultLabel.Text = cMetric.poundage(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cMetric.poundage(inputValue, outputPrecision).ToString();
                 }
                 else
                 {
                     Console.WriteLine("kg -> lbs");
-                    resultLabel.Text = cImperial.poundage(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    resultLabel.Text = cImperial.poundage(inputValue, outputPrecision).ToString();
                 }
             }
             else if (arrowWeight.Checked)
             {
-                //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();
                     Console.WriteLine("g -> gr");
                 }
                 else
                 {
-                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();
                     Console.WriteLine("gr -> g");
                 }
             }
             else if (arrowSpeed.Checked)
             {
-                //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.speed(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.speed(inputValue, outputPrecision).ToString();
                     Console.WriteLine("m/s -> fps");
                 }
                 else
                 {
-                    resultLabel.Text = cMetric.speed(inputValue, outputPrecision).ToString(); //use 'SI' version of convert
+                    resultLabel.Text = cMetric.speed(inputValue, outputPrecision).ToString();
                     Console.WriteLine("fps -> m/s");
                 }
             }
