@@ -147,12 +147,12 @@ namespace WindowsForms_Calc_WSB
             if (arrowWeight.Checked)
             {
                 descriptionContent.Text = "Waga strzały wydaje się dość intuicyjna. Jednak kiedy część producentów podaje wagę w gramach a część w grainach, ten kalkulator może być przydatny.";
-                unitInput.Text = "gram";
-                unitResult.Text = "grain";
+                unitInput.Text = "grain";
+                unitResult.Text = "gram"; 
                 if (unitsExchanged)
                 {
-                    unitInput.Text = "grain";
-                    unitResult.Text = "gram";
+                    unitInput.Text = "gram";
+                    unitResult.Text = "grain";
                 }
             }
 
@@ -219,12 +219,12 @@ namespace WindowsForms_Calc_WSB
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
                     Console.WriteLine("g -> gr");
                 }
                 else
                 {
-                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                     Console.WriteLine("gr -> g");
                 }
             }

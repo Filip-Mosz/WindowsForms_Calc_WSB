@@ -27,7 +27,7 @@ namespace WindowsForms_Calc_WSB
 
         internal double weight(double grains, int round)
         {
-            return Math.Round(grains / grain, round);
+            return Math.Round(grains * grain, round);
         }
 
         internal double speed(double feet, int round)
