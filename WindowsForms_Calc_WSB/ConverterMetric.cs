@@ -22,7 +22,7 @@ namespace WindowsForms_Calc_WSB
 
         internal double poundage(double pounds, int round)
         {
-            return Math.Round(pounds / pound, round);
+            return Math.Round(pounds * pound, round);
         }
 
         internal double weight(double grains, int round)
