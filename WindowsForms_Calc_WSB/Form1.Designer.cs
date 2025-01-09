@@ -213,6 +213,7 @@
             this.exchangeUnits.TabIndex = 14;
             this.exchangeUnits.Text = "↔";
             this.exchangeUnits.UseVisualStyleBackColor = true;
+            this.exchangeUnits.Click += new System.EventHandler(this.ExchangeUnitsButton_Click);
             this.exchangeUnits.MouseHover += new System.EventHandler(this.ExchangeUnits_OnHover);
             // 
             // Form1

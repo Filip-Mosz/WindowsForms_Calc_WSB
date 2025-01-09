@@ -159,12 +159,12 @@ namespace WindowsForms_Calc_WSB
             if (arrowSpeed.Checked)
             {
                 descriptionContent.Text = "Prędkość wylotowa strzały wydaje się dość intuicyjna. Mimo to - najczęściej podawana w stopach na sekundę - może nie być jasna dla europejczyka przyzwyczajonego do jednostek metrycznych.";
-                unitInput.Text = "m/s";
-                unitResult.Text = "fps";
+                unitInput.Text = "fps";
+                unitResult.Text = "m/s"; 
                 if (unitsExchanged)
                 {
-                    unitInput.Text = "fps";
-                    unitResult.Text = "m/s";
+                    unitInput.Text = "m/s";
+                    unitResult.Text = "fps";
                 }
             }
         }
@@ -192,10 +192,12 @@ namespace WindowsForms_Calc_WSB
                 if (unitsExchanged)
                 {
                     resultLabel.Text = cImperial.staticSpine(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    Console.WriteLine("poundsSpine -> inchSpine");
                 }
                 else
                 {
                     resultLabel.Text = cMetric.staticSpine(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    Console.WriteLine("inchSpine -> poundsSpine");
                 }
             }
             else if (poundage.Checked)
@@ -203,11 +205,13 @@ namespace WindowsForms_Calc_WSB
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.poundage(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    Console.WriteLine("lbs -> kg");
+                    resultLabel.Text = cMetric.poundage(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
                 }
                 else
                 {
-                    resultLabel.Text = cMetric.poundage(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    Console.WriteLine("kg -> lbs");
+                    resultLabel.Text = cImperial.poundage(inputValue, outputPrecision).ToString();//use 'SI' version of convert
                 }
             }
             else if (arrowWeight.Checked)
@@ -215,11 +219,13 @@ namespace WindowsForms_Calc_WSB
                 //sprawdzenie, czy exchange utits odkliknięty
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    Console.WriteLine("g -> gr");
                 }
                 else
                 {
-                    resultLabel.Text = cMetric.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    resultLabel.Text = cImperial.weight(inputValue, outputPrecision).ToString();//use 'SI' version of convert
+                    Console.WriteLine("gr -> g");
                 }
             }
             else if (arrowSpeed.Checked)
@@ -228,16 +234,24 @@ namespace WindowsForms_Calc_WSB
                 if (unitsExchanged)
                 {
                     resultLabel.Text = cImperial.speed(inputValue, outputPrecision).ToString();//use of 'imperial' version of convert
+                    Console.WriteLine("m/s -> fps");
                 }
                 else
                 {
                     resultLabel.Text = cMetric.speed(inputValue, outputPrecision).ToString(); //use 'SI' version of convert
+                    Console.WriteLine("fps -> m/s");
                 }
             }
             else
             {
                 MessageBox.Show("Info: Najpierw zaznacz rządaną operację");
             }
+        }
+
+        private void ExchangeUnitsButton_Click(object sender, EventArgs e)
+        {
+            unitsExchanged = true;
+            Checkbox_CheckedChanged(sender, e);
         }
     }
 }

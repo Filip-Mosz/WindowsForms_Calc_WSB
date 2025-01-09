@@ -32,7 +32,7 @@ namespace WindowsForms_Calc_WSB
 
         internal double speed(double feet, int round)
         {
-            return Math.Round(feet / foot, round);
+            return Math.Round(feet * foot, round);
         }
 
         internal double staticSpine(double tradSpine, int round) //may require improvement
