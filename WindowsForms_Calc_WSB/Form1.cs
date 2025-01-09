@@ -122,7 +122,8 @@ namespace WindowsForms_Calc_WSB
         {
             if (staticSpine.Checked)
             {
-                unitInput.Text = "TradSpine";
+                descriptionContent.Text = "Spin statyczny oznacza sztywność promienia strzały. Używany jest do określenia, czy strzała ma szanse na \"czyste\" wyjście z łuku bez zaburzenia toru lotu. Wyrażany w funtach lub setnych częściach cala";
+                unitInput.Text = "LbsSpine";
                 unitResult.Text = "InchSpine";
                 if (unitsExchanged)
                 {
@@ -133,6 +134,7 @@ namespace WindowsForms_Calc_WSB
 
             if (poundage.Checked)
             {
+                descriptionContent.Text = "Siła łuku reprezentuje ekwiwalent cieżaru jakim należałoby obciążyć cięciwę, żeby odciagnąć ją na daną odległość. Zazwyczaj mierzona jest na odległości 28 cali/ok 71 centymetrów";
                 unitInput.Text = "Kg";
                 unitResult.Text = "Lbs";
                 if (unitsExchanged)
@@ -144,6 +146,7 @@ namespace WindowsForms_Calc_WSB
 
             if (arrowWeight.Checked)
             {
+                descriptionContent.Text = "Waga strzały wydaje się dość intuicyjna. Jednak kiedy część producentów podaje wagę w gramach a część w grainach, ten kalkulator może być przydatny.";
                 unitInput.Text = "gram";
                 unitResult.Text = "grain";
                 if (unitsExchanged)
@@ -155,6 +158,7 @@ namespace WindowsForms_Calc_WSB
 
             if (arrowSpeed.Checked)
             {
+                descriptionContent.Text = "Prędkość wylotowa strzały wydaje się dość intuicyjna. Mimo to - najczęściej podawana w stopach na sekundę - może nie być jasna dla europejczyka przyzwyczajonego do jednostek metrycznych.";
                 unitInput.Text = "m/s";
                 unitResult.Text = "fps";
                 if (unitsExchanged)
