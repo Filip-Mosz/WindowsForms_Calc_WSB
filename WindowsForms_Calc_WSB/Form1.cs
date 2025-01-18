@@ -196,7 +196,7 @@ namespace WindowsForms_Calc_WSB
             {
                 if (unitsExchanged)
                 {
-                    resultLabel.Text = cImperial.staticSpine(inputValue, outputPrecision).ToString();
+                    resultLabel.Text = cImperial.staticSpine(inputValue).ToString();
                     Console.WriteLine("poundsSpine -> inchSpine");
                 }
                 else

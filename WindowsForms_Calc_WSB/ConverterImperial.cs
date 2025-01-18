@@ -16,7 +16,6 @@ namespace WindowsForms_Calc_WSB
         private double foot = 0.3048;
         private double pound = 0.45359237;
         private double grain = 0.06479891;
-        private double spine = 1; //find correct ratio
 
         public ConverterImperial() { }
 
@@ -35,9 +34,9 @@ namespace WindowsForms_Calc_WSB
             return Math.Round(meter / foot, round);
         }
 
-        internal double staticSpine(double tradSpine, int round) //may require improvement
+        internal double staticSpine(double tradSpine) //may require improvement
         {
-            return tradSpine / spine;
+            return Math.Round( 26/tradSpine, 2) * 1000;
         }
 
     }
