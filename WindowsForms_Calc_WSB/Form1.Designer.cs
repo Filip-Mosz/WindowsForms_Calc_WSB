@@ -245,7 +245,7 @@
             this.Controls.Add(this.inputBox);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kalkulator Łuczniczy";
             this.calculationGroup.ResumeLayout(false);
             this.calculationGroup.PerformLayout();
             this.description.ResumeLayout(false);
